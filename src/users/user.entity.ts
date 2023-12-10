@@ -1,4 +1,4 @@
-import {Entity,Column, PrimaryGeneratedColumn} from 'typeorm'
+import {Entity,Column, PrimaryGeneratedColumn, AfterInsert, AfterRemove, AfterUpdate} from 'typeorm'
 
 @Entity()
 export class User {
@@ -10,4 +10,14 @@ export class User {
 
     @Column()
     password: string
+
+    @AfterInsert()
+    logInsert(){
+    }
+
+    @AfterUpdate()
+    logUpdate(){}
+
+    @AfterRemove()
+    logRemove(){}
 }
