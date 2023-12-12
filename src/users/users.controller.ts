@@ -86,7 +86,7 @@ export class UsersController {
 
   @Get()
   findAllUsers(@Query('email') email: string) {
-    this.usersService.find(email);
+    return this.usersService.find(email);
   }
 
   @Patch('/:id')
