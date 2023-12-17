@@ -26,7 +26,7 @@ export class ReportsController {
   @Get()
   @UseGuards(AuthGuard)
   getEstimateReport(@Query() query: GetEstimateDto) {
-    return this.reportsService;
+    return this.reportsService.createEstimate(query);
   }
 
   @Post()
